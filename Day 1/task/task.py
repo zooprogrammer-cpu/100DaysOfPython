@@ -1,0 +1,5 @@
+print("Click Run to run this program \n")
+print("Welcome to the Bad Name Generator")
+city_name = input("What is the name of the city you were born in?\n")
+pets_name = input("What is your pet's name?\n")
+print("Your band's name could be: " + city_name + " " + pets_name)
