@@ -8,6 +8,6 @@ bmi = 84/1.56 ** 2
 
 print(bmi)
 
-print(round(bmi))
+print(round(bmi)) # Round the numbers
 
 
