@@ -7,3 +7,28 @@ states_of_america = ["Delaware", "Pennsylvania", "New Jersey", "Georgia", "Conne
                      "New Mexico", "Arizona", "Alaska", "Hawaii"]
 
 print(states_of_america)
+
+num_of_states = len(states_of_america)
+
+print(num_of_states)
+
+# print(states_of_america[num_of_states]) # this creates an IndexError : list index out of range
+
+print(states_of_america[num_of_states-1]) # Prints Hawaii
+
+# Nested List
+dirty_dozen = ["Spinach", "Strawberries", "Potatoes", "Kale", "Pears"]
+
+fruits = ["Strawberries", "Pears"]
+
+vegetables = ["Spinach", "Potatoes"]
+
+nested_list = [fruits, vegetables]
+
+print(nested_list) #[['Strawberries', 'Pears'], ['Spinach', 'Potatoes']]
+
+print (nested_list[1][1]) # Potatoes
+
+
+
+
