@@ -4,20 +4,17 @@ from turtle import Turtle, Screen
 import random
 
 
-colors = ["CornFlowerBlue", "DarkOrchid", "IndianRed"]
+colors = ["CornFlowerBlue", "DarkOrchid", "IndianRed", "LightSeaGreen", "wheat"]
+direction = [0,90,180,270]
 tim = Turtle()
 tim.shape("turtle")
+tim.pensize(15)
+tim.speed("fastest")
 
-def draw_shape(number_of_sides):
-    angle = 360 / number_of_sides
-    for _ in range(number_of_sides):
-        tim.forward(100)
-        tim.right(angle)
-
-
-for shape_side in range(3, 11):
+for _ in range(200):
     tim.color(random.choice(colors))
-    draw_shape(shape_side)
+    tim.forward(30)
+    tim.setheading(random.choice(direction))
 
 screen = Screen()
 
