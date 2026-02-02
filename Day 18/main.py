@@ -10,23 +10,21 @@ def generate_color():
     random_color = (r,g,b)
     return random_color
 
-direction = [0,90,180,270]
-
 
 # colors = generate_color()
 tim = Turtle()
 tim.shape("turtle")
-tim.pensize(15)
 tim.speed("fastest")
-
 screen = Screen()
 screen.colormode(255)
 
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360/size_of_gap)):
+        tim.color(generate_color())
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
 
-for _ in range(200):
-    tim.color(generate_color())
-    tim.forward(30)
-    tim.setheading(random.choice(direction))
+draw_spirograph(5)
 
 screen.exitonclick()
 
