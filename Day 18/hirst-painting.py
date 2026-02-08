@@ -18,28 +18,26 @@ color_list = [(199, 175, 118), (125, 36, 24), (187, 158, 50), (170, 105, 56), (5
 
 tim = Turtle()
 tim.shape("turtle")
-# tim.speed("fastest")
+tim.speed("fastest")
+tim.hideturtle()
 tim.pensize(10)
 
 tim.penup()
 tim.setheading(225)
 tim.forward(300)
 tim.setheading(0)
+number_of_dots = 100
 
-def draw():
-    for _ in range(10):
-        tim.pendown()
-        tim.dot(20,random.choice(color_list))
-        tim.penup()
-        tim.forward(50)
 
-for _ in range(20):
-    draw()
-    tim.setheading(90)
+for dot_count in range(1, number_of_dots + 1):
+    tim.dot(20,random.choice(color_list))
     tim.forward(50)
-    tim.setheading(180)
-    tim.forward(500)
-    tim.setheading(0)
 
+    if dot_count % 10 == 0:
+        tim.setheading(90)
+        tim.forward(50)
+        tim.setheading(180)
+        tim.forward(500)
+        tim.setheading(0)
 
 screen.exitonclick()
