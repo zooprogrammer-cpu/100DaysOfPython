@@ -12,13 +12,13 @@
 import pandas
 from numpy.ma import average
 
-data = pandas.read_csv("weather_data.csv")
+# data = pandas.read_csv("weather_data.csv")
 # print(data)
 # print(type(data)) #prints <class 'pandas.DataFrame'>
-temperatures = data["temp"]
+# temperatures = data["temp"]
 # print(type(temperatures)) # prints <class 'pandas.Series'>
 
-data_dict = data.to_dict()
+# data_dict = data.to_dict()
 # print(data_dict)
 
 # average = data["temp"].mean()
@@ -45,14 +45,37 @@ data_dict = data.to_dict()
 # print(monday_temp_f)
 
 # create data frame -
+# data_dict = {
+#     "students" : ["Amy", "James", "Angela"],
+#     "scores" : [76,56,65]
+# }
+#
+# new_data = pandas.DataFrame(data_dict)
+# print(new_data)
+#
+# new_data.to_csv("new_data.csv")
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data_20260517.csv")
+
+var = data["Primary Fur Color"]
+print(len(var))
+
+black_squirrels = data[data["Primary Fur Color"] == 'black']
+black_squirrels_count = len(black_squirrels)
+
+red_squirrels = data[data["Primary Fur Color"] == 'red']
+red_squirrels_count = len(red_squirrels)
+
+grey_squirrels = data[data["Primary Fur Color"] == 'grey']
+grey_squirrels_count = len(grey_squirrels)
+
+# Create data frame
 data_dict = {
-    "students" : ["Amy", "James", "Angela"],
-    "scores" : [76,56,65]
+    "Fur Coat" : ["Grey", "Red", "Black"],
+    "Count" : [grey_squirrels_count, red_squirrels_count, black_squirrels_count]
+
 }
 
 new_data = pandas.DataFrame(data_dict)
-print(new_data)
-
-new_data.to_csv("new_data.csv")
-
+new_data.to_csv("squirrels_by_colors.csv")
 
