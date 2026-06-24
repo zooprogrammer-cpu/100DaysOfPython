@@ -28,11 +28,13 @@ while len(guessed_states) < 5:
 
         guessed_states.append(answer_state)
 
-not_guessed_states = []
+# not_guessed_states = []
 
-for state in all_states:
-    if state not in guessed_states:
-        not_guessed_states.append(state)
+# for state in all_states:
+#     if state not in guessed_states:
+#         not_guessed_states.append(state)
+
+not_guessed_states = [state for state in all_states if state not in guessed_states]
 
 print(not_guessed_states)
 
